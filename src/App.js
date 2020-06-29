@@ -26,7 +26,7 @@ export default class Ap extends Component {
     });
   }
   getWeather = async (latitude, longitude) => {
-    const API_KEY = "579bf7d288c2dafdc9212c23a3ece83a";
+    const API_KEY = "";
     const api_call = await fetch(`//api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${API_KEY}&units=metric`);
     const data = await api_call.json();
     
