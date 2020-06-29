@@ -59,7 +59,7 @@ export default class Ap extends Component {
 }
 
   render() {
-    const {temperatureC, city, temperatureF, icon, sunrise, sunset}=this.state;
+    const {temperatureC, city, temperatureF,  sunrise, sunset}=this.state;
     return (
       <div >
       <header className="App-header">
@@ -68,12 +68,12 @@ export default class Ap extends Component {
         
         <div id='earth'>
         </div>
-    <div>City: {city}</div>
-    <div>temperatureC {temperatureC}</div>
-    <div>temperatureF {temperatureF}</div>
-    <div>icon {icon}</div>
-    <div>sunrise {sunrise}</div>
-    <div>sunset {sunset}</div>
+    <div align='center'>City: {city}</div>
+    <div align='center'>Temperature in &deg;C:{temperatureC}</div>
+    <div align='center'>Temperature in &deg;F: {temperatureF}</div>
+    
+    <div align='center'>Sunrise Time: {sunrise}</div>
+    <div align='center'>Sunset Time: {sunset}</div>
       </header>
     </div>
     )
