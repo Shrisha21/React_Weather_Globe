@@ -1,0 +1,64 @@
+#earth {
+    /* [1] Allow it to contain the absolutely positions pseudo-elements (later-on) */
+    position: relative;
+  
+    /* [2] Set-up the dimensions and spacing */
+    width: 200px;
+    height: 200px;
+    margin: 2em auto;
+  
+    /* [3] Prepare the animation effects */
+    transition: transform 200ms linear;
+    animation: rotate 13s linear infinite; /* This is going to be defined in the next step */
+  
+    /* [4] Tweak the appearance, and give it a nice background i.e. the world map */
+    color: #000;
+    border-radius: 50%;
+    background: url(../src/earth.jpg) 0 0 repeat / 630px;
+    box-shadow: inset 20px 0 80px 6px rgba(0, 0, 0, 1);
+  
+    /* [5] Position things in a 3d space */
+    transform-style: preserve-3d;
+  }
+
+  #earth:after {
+    /* [1] Break the flow to show this as an overlay */
+    position: absolute;
+    top: 0;
+    left: 0;
+  
+    /* [2] Make it take all the space available in the box (ahem... globe!) */
+    width: 100%;
+    height: 100%;
+  
+    /* [3] Make sure this has no generated content, as we want this just for fancy purposes */
+    content: '';
+  
+    /* [4] Give it some shape and shadow */
+    border-radius: 50%;
+    box-shadow: -80px 15px 80px 10px rgba(0,0,0,.9) inset;
+  }
+
+  #earth:before {
+    /* [1] Again, break the flow to show this as an overlay */
+    position: absolute;
+    top: 0;
+    left: 0;
+  
+    /* [2] Again, give it all the available space */
+    width: 100%;
+    height: 100%;
+  
+    /* [3] Duh. */
+    content: '';
+  
+    /* [4] Add some shape and overlay effect to it */
+    opacity: .2;
+    border-radius: 50%;
+    background: radial-gradient(circle at 100px 100px, #fff, #000);
+  }
+
+  @keyframes rotate {
+    0% {background-position: 0 0;}
+    100% {background-position: 630px 0;}
+  }
